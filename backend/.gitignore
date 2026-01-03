@@ -1,0 +1,18 @@
+# ENV
+.env
+*.env
+
+# Secrets
+encrypted_password.txt
+
+# Python
+__pycache__/
+*.pyc
+venv/
+backend/venv/
+
+# Flutter build
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/

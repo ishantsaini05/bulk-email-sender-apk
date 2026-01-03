@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- For accessing downloads folder -->
+    <external-path name="downloads" path="Download/" />
+    
+    <!-- For accessing pictures folder -->
+    <external-path name="pictures" path="Pictures/" />
+    
+    <!-- For accessing documents folder -->
+    <external-path name="documents" path="Documents/" />
+    
+    <!-- For accessing DCIM folder -->
+    <external-path name="dcim" path="DCIM/" />
+    
+    <!-- For accessing root external storage -->
+    <external-path name="external" path="." />
+    
+    <!-- For accessing app-specific external files -->
+    <external-files-path name="my_app_files" path="." />
+    
+    <!-- For accessing app-specific cache -->
+    <external-cache-path name="my_app_cache" path="." />
+    
+    <!-- For accessing app-specific internal files -->
+    <files-path name="my_internal_files" path="." />
+</paths>
