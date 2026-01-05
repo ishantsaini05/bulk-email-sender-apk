@@ -3,22 +3,21 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from app.config import settings
 
-# format: mysql://user:password@host:port/database
+# IMPORTANT: Force mysqlclient dialect
+DATABASE_URL = settings.DATABASE_URL
+
+# Replace mysql:// with mysql+mysqldb:// for mysqlclient
+if DATABASE_URL.startswith("mysql://"):
+    DATABASE_URL = DATABASE_URL.replace("mysql://", "mysql+mysqldb://")
+
 engine = create_engine(
-    settings.DATABASE_URL,
+    DATABASE_URL,
     pool_pre_ping=True,
     pool_recycle=3600,
-    pool_size=10,
-    max_overflow=20,
-    echo=False  # Production में False रखें
+    echo=True  # Debug के लिए, बाद में False कर दें
 )
 
-SessionLocal = sessionmaker(
-    autocommit=False, 
-    autoflush=False, 
-    bind=engine
-)
-
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 def get_db():
