@@ -2,11 +2,11 @@ from pydantic_settings import BaseSettings
 from typing import Optional
 
 class Settings(BaseSettings):
-    # Database - Railway से आ रहा है
-    DATABASE_URL: str = "mysql://root:GRdCswmwPLXhWbtHGkpAkZxVLnVUsMSM@mysql.railway.internal:3306/railway"
+    # Database - Railway से automatically मिलेगा
+    DATABASE_URL: str
     
     # JWT
-    SECRET_KEY: str = "H9@kL!29sQp#XvA7mZ$8W"  # Railway variable से
+    SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
